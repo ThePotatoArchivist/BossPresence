@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#c:bosses",
+    { "id": "fdbosses:chesed", "required": false },
+    { "id": "#neoforge:bosses", "required": false }
+  ]
+}

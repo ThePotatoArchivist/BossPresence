@@ -1,0 +1,5 @@
+{
+  "bosspresence.boss_nearby.sleep": "You may not rest now, a great force is nearby",
+  "bosspresence.boss_nearby.respawn_anchor": "You may not set your spawn, a great force is nearby",
+  "gamerule.bosspresence:boss_prevent_spawnpoint_distance": "Boss spawnpoint prevention distance"
+}
