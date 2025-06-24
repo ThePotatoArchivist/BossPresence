@@ -4,6 +4,7 @@ import archives.tater.bosspresence.BossPresence;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RespawnAnchorBlock;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -22,7 +23,7 @@ public class RespawnAnchorBlockMixin {
             cancellable = true
     )
     private void preventSetSpawn(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
-        if (!BossPresence.isBossNearby(world, pos)) return;
+        if (!BossPresence.isBossNearby((ServerWorld) world, pos)) return; // Inside an isClient check
 
         player.sendMessage(Text.translatable(BossPresence.BOSS_ANCHOR_MESSAGE), true);
         cir.setReturnValue(ActionResult.SUCCESS_NO_ITEM_USED);

@@ -1,11 +1,13 @@
 {
-	"required": true,
-	"package": "archives.tater.bosspresence.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"RespawnAnchorBlockMixin",
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "archives.tater.bosspresence.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RespawnAnchorBlockMixin",
+    ,
+    "ServerPlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

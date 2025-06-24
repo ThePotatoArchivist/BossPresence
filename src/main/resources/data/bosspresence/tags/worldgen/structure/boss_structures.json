@@ -1,0 +1,7 @@
+{
+  "values": [
+    {"id": "cataclysm:burning_arena", "required": false},
+    {"id": "cataclysm:frosted_prison", "required": false},
+    {"id": "cataclysm:sunken_city", "required": false}
+  ]
+}
