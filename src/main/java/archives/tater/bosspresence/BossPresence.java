@@ -51,7 +51,7 @@ public class BossPresence implements ModInitializer {
 		var structurePos = world.locateStructure(BOSS_STRUCTURES_TAG, pos, 0, false);
         if (structurePos == null) return false;
 
-        return pos.isWithinDistance(structurePos, distance);
+        return pos.isWithinDistance(structurePos.withY(pos.getY()), distance);
     }
 
 	@Override
