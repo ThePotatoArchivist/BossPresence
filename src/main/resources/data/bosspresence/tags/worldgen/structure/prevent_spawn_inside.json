@@ -1,0 +1,6 @@
+{
+  "values": [
+    "#bosspresence:prevent_spawn_nearby",
+    { "id": "fdbosses:chesed_arena", "required": false }
+  ]
+}

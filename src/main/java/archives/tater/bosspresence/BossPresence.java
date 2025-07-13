@@ -8,6 +8,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.structure.StructureStart;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -30,7 +31,8 @@ public class BossPresence implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final TagKey<EntityType<?>> BOSSES_TAG = TagKey.of(RegistryKeys.ENTITY_TYPE, id("bosses"));
-	public static final TagKey<Structure> BOSS_STRUCTURES_TAG = TagKey.of(RegistryKeys.STRUCTURE, id("boss_structures"));
+	public static final TagKey<Structure> PREVENT_SPAWN_NEARBY = TagKey.of(RegistryKeys.STRUCTURE, id("prevent_spawn_nearby"));
+	public static final TagKey<Structure> PREVENT_SPAWN_INSIDE = TagKey.of(RegistryKeys.STRUCTURE, id("prevent_spawn_inside"));
 
 	public static final GameRules.Key<IntRule> BOSS_DISTANCE_GAMERULE = GameRuleRegistry.register(
 			id("boss_prevent_spawnpoint_distance").toString(),
@@ -48,7 +50,10 @@ public class BossPresence implements ModInitializer {
                 entity -> entity.isAlive() && entity.getType().isIn(BOSSES_TAG)
         ).isEmpty()) return true;
 
-		var structurePos = world.locateStructure(BOSS_STRUCTURES_TAG, pos, 0, false);
+		if (world.getStructureAccessor().getStructureContaining(pos, PREVENT_SPAWN_INSIDE) != StructureStart.DEFAULT)
+			return true;
+
+		var structurePos = world.locateStructure(PREVENT_SPAWN_NEARBY, pos, 0, false);
         if (structurePos == null) return false;
 
         return pos.isWithinDistance(structurePos.withY(pos.getY()), distance);
