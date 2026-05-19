@@ -1,6 +1,8 @@
 {
   "values": [
     "#bosspresence:prevent_spawn_nearby",
-    { "id": "fdbosses:chesed_arena", "required": false }
+    { "id": "fdbosses:chesed_arena", "required": false },
+    { "id": "fdbosses:malkuth_arena", "required": false },
+    { "id": "fdbosses:geburah_arena", "required": false }
   ]
 }
