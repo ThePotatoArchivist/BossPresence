@@ -1,6 +1,20 @@
 {
   "values": [
     "#bosspresence:prevent_spawn_nearby",
+    { "id": "cataclysm:burning_arena", "required": false },
+    { "id": "cataclysm:frosted_prison", "required": false },
+    { "id": "cataclysm:sunken_city", "required": false },
+    { "id": "cataclysm:abandoned_spire", "required": false },
+    { "id": "cataclysm:abandoned_temple", "required": false },
+    { "id": "cataclysm:abandoned_village", "required": false },
+    { "id": "cataclysm:acropolis", "required": false },
+    { "id": "cataclysm:amethyst_nest", "required": false },
+    { "id": "cataclysm:ancient_factory", "required": false },
+    { "id": "cataclysm:cursed_pyramid", "required": false },
+    { "id": "cataclysm:desert_site", "required": false },
+    { "id": "cataclysm:desert_temple", "required": false },
+    { "id": "cataclysm:ruined_citadel", "required": false },
+    { "id": "cataclysm:soul_black_smith", "required": false },
     { "id": "fdbosses:chesed_arena", "required": false },
     { "id": "fdbosses:malkuth_arena", "required": false },
     { "id": "fdbosses:geburah_arena", "required": false }
